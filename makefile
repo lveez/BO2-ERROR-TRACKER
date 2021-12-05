@@ -1,7 +1,7 @@
-SRCFILES := $(wildcard src/*.cpp src/*/*.cpp)
+SRCFILES := $(wildcard src/*.c src/*/*.c)
 
 all:
-	g++ $(SRCFILES) -o./bin/B2ETcli
+	g++ $(SRCFILES) -o./bin/dbg/B2ETcli
 
 release:
-	g++ -static -static-libgcc -static-libstdc++ $(SRCFILES) -o./bin/B2ETcli
+	g++ -static -static-libgcc -static-libstdc++ $(SRCFILES) -o./bin/rel/B2ETcli
