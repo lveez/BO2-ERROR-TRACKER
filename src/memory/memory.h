@@ -10,6 +10,7 @@ Contains functions for reading process memory
 #include <TlHelp32.h>
 
 // returns the process id of Black Ops II if successful, otherwise returns 0
+// doesn't work with pluto due to anti-cheat
 DWORD GetProcessID() {
   PROCESSENTRY32 entry;
   entry.dwSize = sizeof(entry);
@@ -25,7 +26,7 @@ DWORD GetProcessID() {
   {
       do
       {
-          if (!strcmp("t6zmv41.exe", entry.szExeFile) || !strcmp("t6zm.exe", entry.szExeFile))
+          if (!strcmp("t6zmv41.exe", entry.szExeFile))
           {
               CloseHandle(snapshot);
               return entry.th32ProcessID;
